@@ -27,7 +27,7 @@ public class EquipoTecnologico {
     }
 
     // ==========================================
-    //          GETTERS Y SETTERS
+    //          GETTERS Y SETTERS  as
     // ==========================================
 
     public int getIdEquipo() {
