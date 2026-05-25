@@ -28,7 +28,7 @@ public class Usuario {
     // Getters
     public int getId() { return id; }
     public String getNumeroControl() { return numeroControl; }
-    public String getCorreo() { return correo; }
+    public String getCorreoInstitucional() { return correo; }
     public String getNombre() { return nombre; }
     public String getTipoUsuario() { return tipoUsuario; }
     public LocalDate getFechaRegistro() { return fechaRegistro; }

@@ -14,7 +14,7 @@ public class UsuarioDAO {
         try (Connection conn = Conexion.conectar();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, u.getNumeroControl());
-            ps.setString(2, u.getCorreo());
+            ps.setString(2, u.getCorreoInstitucional());
             ps.setString(3, u.getNombre());
             ps.setString(4, u.getTipoUsuario());
             ps.setDate(5, Date.valueOf(u.getFechaRegistro())); // Asume que es un LocalDate

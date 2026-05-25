@@ -31,10 +31,10 @@ public class ProductoDAO {
     public void insertar(Producto p) throws SQLException {
         String sql = "INSERT INTO Producto (nombreProducto, categoria, precioUnitario, costoUnitario, stockActual, stockMinimo) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = Conexion.conectar(); PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, p.getNombre());
+            ps.setString(1, p.getNombreProducto());
             ps.setString(2, p.getCategoria());
-            ps.setDouble(3, p.getPrecio());
-            ps.setDouble(4, p.getCosto());
+            ps.setDouble(3, p.getPrecioUnitario());
+            ps.setDouble(4, p.getCostoUnitario());
             ps.setInt(5, p.getStockActual());
             ps.setInt(6, p.getStockMinimo());
             ps.executeUpdate();
@@ -44,8 +44,8 @@ public class ProductoDAO {
     public void actualizar(Producto p) throws SQLException {
         String sql = "UPDATE Producto SET nombreProducto = ?, precioUnitario = ?, stockActual = ? WHERE idProducto = ?";
         try (Connection conn = Conexion.conectar(); PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, p.getNombre());
-            ps.setDouble(2, p.getPrecio());
+            ps.setString(1, p.getNombreProducto());
+            ps.setDouble(2, p.getPrecioUnitario());
             ps.setInt(3, p.getStockActual());
             ps.setInt(4, p.getId());
             ps.executeUpdate();
